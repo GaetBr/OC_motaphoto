@@ -8,7 +8,7 @@
         ?>
     </nav><!-- #footer-navigation -->
 </footer><!-- #colophon -->
-
+<?php get_template_part('templates/templates-parts/modal-contact'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

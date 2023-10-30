@@ -7,6 +7,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+    <?php wp_body_open(); ?>
+
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
             <?php
@@ -20,26 +22,9 @@
             }
             ?>
         </div><!-- .site-branding -->
-
-         <!-- Bouton Burger en dehors du conteneur nav -->
-         <div class="navigation-right">
-            <a href="#" id="openBtn">
-                <span class="burger-icon">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </span>
-            </a>
-        </div>
-
-        <!-- Contenu du menu burger -->
-        <div id="mySidenav" class="sidenav">
-            <?php
-            // Affiche le menu géré depuis WordPress dans le menu burger
-            wp_nav_menu(array('theme_location' => 'menu-principal', 'menu_id' => 'main-menu'));
-            ?>
-        </div>
         
+        <?php get_template_part('/templates/templates-parts/menu-burger'); ?>
+
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <?php
             // Affiche le menu géré depuis WordPress

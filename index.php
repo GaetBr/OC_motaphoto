@@ -1,7 +1,6 @@
 <?php
-get_header();
+get_header(); ?>
 
-// Zone de contenu de la page d'accueil 
+<?php echo 'je suis du contenue' ?>
 
-get_footer();
-?>
+<?php get_footer(); ?>

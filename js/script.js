@@ -1,3 +1,7 @@
+/*****************************************************************************************/
+/*****************                MENU BURGER                     ************************/
+/*****************************************************************************************/
+
 // Fonction pour gérer l'ouverture du menu burger et déclencher l'animation des liens
 function handleMenuOpen() {
     
@@ -48,3 +52,32 @@ function handleMenuOpen() {
     sidenav.style.opacity = "0";
     sidenav.classList.remove("active");
   }
+
+/*****************************************************************************************/
+/***************                       MODAL                         *********************/
+/*****************************************************************************************/
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  // Get the modal
+  var modal = document.getElementById('myModal');
+
+  // Get all elements with class "contact-link"
+  var contactLinks = document.querySelectorAll(".contact-link");
+
+  // When any contact link is clicked, open the modal
+  contactLinks.forEach(function(contactLink) {
+    contactLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default behavior of the link
+      modal.style.display = "flex";
+    });
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+});
