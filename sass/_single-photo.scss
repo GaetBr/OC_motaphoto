@@ -1,0 +1,168 @@
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/*******************************************************/
+/********               ARTICLE             ************/
+/*******************************************************/
+// POST
+.post-content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;  
+    .post-info {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid black;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        .post-title {
+            width: 420px;
+            font-style: italic;
+            font-size: 66px;
+            font-weight: 400;
+            line-height: 58px;
+            margin: 0 0 20px 0;
+        }
+        p, a {
+            text-decoration: none;
+            color: black;
+            margin: 0 0 20px 0;            
+        }
+    }
+  
+    .post-info,
+    .post-image {
+      width: 50%;
+      box-sizing: border-box; 
+    }
+  
+    .post-image {
+      position: relative; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }  
+      .fullscreen-icon {
+        opacity: 0;
+        transition: opacity 0.3s;
+        .fullscreen-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        } 
+      }
+      &:hover {
+        .fullscreen-icon {
+          opacity: 1;
+        }
+      }         
+    }
+}
+
+// LIGHTBOX 
+#img1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  
+    body.lightbox-open & {
+      display: flex;
+    }
+  
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+}
+
+/*******************************************************/
+/********         INTERESTED SECTION        ************/
+/*******************************************************/
+.interested-section {
+    background-color: #f4f4f4; // Ajoute une couleur de fond pour le contraste
+    height: 118px;
+    border-bottom: 1px solid black;
+  
+    .interested {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        .interested_contact,
+        .interested-image {
+            display: flex;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box; 
+        }
+        .interested_contact {  
+            align-items: center;
+            p {
+                margin-bottom: 10px; // Ajoute un espacement en bas du paragraphe
+            }
+  
+            .interested-btn {
+                margin-left: auto;
+  
+                button {
+                width: 272px;
+                height: 50px;
+                padding: 10px 20px;
+                background-color: #d8d8d8; // Couleur de fond du bouton
+                color: black; // Couleur du texte du bouton
+                border: none;
+                cursor: pointer;
+                }
+            }
+        }
+        .interested-image {
+            justify-content: flex-end;
+            .container-thumbnail {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                .img-container {
+                    max-width: 81px;
+                    max-height: 71px;
+                    overflow: hidden;
+                    .img-previous,
+                    .img-next {
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                }
+                .arrow-container {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 81px;
+                    .previous:hover + .img-container .img-previous {
+                        opacity: 1;
+                    }
+                    
+                    .next:hover + .img-container .img-next {
+                        opacity: 1;
+                    }
+                }    
+            }       
+        }        
+    }
+} 

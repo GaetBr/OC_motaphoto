@@ -81,3 +81,37 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+
+/*****************************************************************************************/
+/***************                 MODAL AVEC JQUERY                   *********************/
+/*****************************************************************************************/
+jQuery(document).ready(function($) {
+  // Utilise la variable refPhoto ici
+  $('#contactBTN').on('click', function() {
+    $('#myModal input[name="your-text"]').val(refPhoto);
+    // Ou utiliser le code suivant si le champ REF.PHOTO est un champ texte
+    // $('#myModal input[name="your-text"]').val(refPhoto).attr('readonly', true);
+    $('#myModal').css('display', 'flex');
+  });
+});
+
+/*****************************************************************************************/
+/***************                FULLSCREEN ICONE                     *********************/
+/*****************************************************************************************/
+document.addEventListener('DOMContentLoaded', function() {
+  var lightboxTrigger = document.querySelector('.lightbox-trigger');
+  var lightbox = document.getElementById('img1');
+
+  var fullscreenIcon = lightboxTrigger.querySelector('.fullscreen-icon');
+
+  fullscreenIcon.addEventListener('click', function(event) {
+      event.preventDefault();
+      lightbox.style.display = 'block';
+  });
+
+  lightbox.addEventListener('click', function() {
+      this.style.display = 'none';
+  });
+});
+
+

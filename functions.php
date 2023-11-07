@@ -24,4 +24,8 @@ function ajouter_classe_contact_menu($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'ajouter_classe_contact_menu', 10, 3);
+
+// Ajoute une nouvelle taille d'image personnalisée
+add_image_size('custom-thumbnail', 81, 71, false);
 ?>
+

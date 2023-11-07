@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../assets/fonts/SpaceMono-Regular.woff2') format('woff2'),
+         url('../assets/fonts/SpaceMono-Bold.woff2') format('woff2'),
+         url('../assets/fonts/SpaceMono-Italic.woff2') format('woff2'),
+         url('../assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: auto;
+    min-height: 100vh;
+    font-family: 'Space Mono', sans-serif;
+}
+

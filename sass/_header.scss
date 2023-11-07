@@ -1,0 +1,218 @@
+/* _header.scss */
+
+.site-header {
+  min-height: 80px;
+  background-color: white; 
+  padding: 0px; 
+  margin: 0;
+  display: flex;
+  justify-content: space-between;  
+  .site-branding {
+    display: flex;
+    align-items: center;  
+    img {
+      width: 75%;
+      height: auto;
+      margin-left: 3em;
+    }  
+    .site-title {
+      margin: 0; 
+    }
+  }  
+  .main-navigation {
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    text-align: center;
+    ul {
+      list-style: none; 
+      margin: 0; 
+      padding: 0;
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 2em;
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: 400;
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidenav{
+  display: none;
+}
+
+/*****************************************************************************************/
+/***************                       MODAL                         *********************/
+/*****************************************************************************************/
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  align-items: center;
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 0 auto; 
+    padding: 0px;
+    border: 1px solid #888;
+    width: 33.3%;
+    img {
+      width: 100%;
+    }
+    /* Style pour centrer le formulaire */
+    .wpcf7 {
+      width: 50%;
+      margin: auto;
+      padding-top: 5%;
+      form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .wpcf7-form-control-wrap.custom-size {
+        position: relative;
+      }
+      .wpcf7-form-control.custom-size {
+        width: 100%;
+        height: 2em;
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+      .wpcf7-form-control-wrap.custom-sizeM {
+        position: relative;
+      }
+
+      .wpcf7-form-control.custom-sizeM {
+        width: 100%; 
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+      /* Style pour le bouton d'envoi */
+      .wpcf7-submit {
+        width: 100%; 
+        height: 4em;
+        border: none;
+        background-color:#d8d8d8;
+        border-radius: 2px;
+        text-align: center;   
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*****************************************************************************************/
+/***************                 MEDIA QUERIES                       *********************/
+/*****************************************************************************************/
+
+// < 1023px
+@media screen and (max-width: 1023px) {
+  #site-navigation {
+    display: none; /* Masquer le menu normal */
+  }
+  header div {
+    display: flex;
+  }
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.3s;
+  }  
+  .burger-icon.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  .burger-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-icon.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  .navigation-right {
+    margin-right: 3em;
+  }
+
+  .sidenav {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    max-width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 125px;
+    right: 0;
+    background-color: red;
+  
+    overflow-x: 0;
+    transition: max-width 0.5s ease;
+    margin: 0;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; 
+    
+      height: 100%;
+      padding: 0;
+      li{
+        margin-bottom: 3em;
+      }
+      a {
+        text-decoration: none;
+        font-size: 4em;
+        color: white; 
+      }
+    }
+  }
+
+  #mySidenav.active {
+    max-width: 100%;
+  }
+
+  .modal{
+    .modal-content {
+      width: 50%;
+      .wpcf7 {
+        width: 80%;
+      }
+    }
+  }
+}
+
+// < 768px
+@media screen and (max-width: 767px) {
+  .modal{
+    .modal-content {
+      width: 80%;
+      .wpcf7 {
+        width: 80%;
+      }
+    }
+  }
+}
