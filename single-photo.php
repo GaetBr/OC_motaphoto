@@ -20,15 +20,7 @@ get_header(); ?>
                 </div>
                 <div class="post-image">
                     <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="post-thumbnail custom-image-size" />
-                    <a href="#img1" class="lightbox-trigger">
-                        <span class="fullscreen-icon">
-                            <img class="fullscreen-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Icon_fullscreen.png" alt="fullscreen image"/>
-                        </span>
-                    </a>
-
-                    <a href="#" class="lightbox" id="img1">
-                        <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" alt="<?php the_title_attribute(); ?>" />
-                    </a>
+                    <?php echo get_template_part('/templates/templates-parts/photo-overlay'); ?>
                 </div>
             </div>
         </article>
@@ -42,18 +34,21 @@ get_header(); ?>
                 </div>
                 <div class="interested-image">
                     <div class="container-thumbnail">
-                        <div class="img-container">
-                            <div class="img-previous"><?php echo get_the_post_thumbnail(get_previous_post(), 'custom-thumbnail'); ?></div>
-                            <div class="img-next"><?php echo get_the_post_thumbnail(get_next_post(), 'custom-thumbnail'); ?></div>            
-                        </div>
-
-                    <div class="arrow-container">
                         <div class="previous">
-                            <?php previous_post_link('%link', '<img class="arrow" src="' . get_template_directory_uri() . '/assets/images/arrowL.png" alt="">'); ?>
+                            <?php 
+                            previous_post_link('%link', '<img class="arrowL" src="' . get_template_directory_uri() . '/assets/images/arrowL.png" alt="">');
+                            if (get_previous_post() != null) {
+                                echo '<span class="prev-img">' . get_the_post_thumbnail(get_previous_post(), 'custom-thumbnail') . '</span>';
+                            }                            
+                            ?>
                         </div>
-
                         <div class="next">
-                            <?php next_post_link('%link', '<img class="arrow" src="' . get_template_directory_uri() . '/assets/images/arrowR.png" alt="">'); ?>
+                            <?php 
+                            next_post_link('%link', '<img class="arrowR" src="' . get_template_directory_uri() . '/assets/images/arrowR.png" alt="">');
+                            if (get_next_post() != null) {
+                                echo '<span class="next-img">' . get_the_post_thumbnail(get_next_post(), 'custom-thumbnail')  . '</span>';
+                            }  
+                            ?>
                         </div>
                     </div>
                 </div>
