@@ -1,0 +1,111 @@
+.alsolike-section {
+    padding: 3vh 0;
+    h2 {
+        font-weight: 400;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 3vh;
+    }
+    .related-photo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        .relatedPhoto-container {
+            width: calc(50% - 10px);
+            height: 60vh;
+            max-height: 500px;
+            position: relative;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }    
+    }
+}
+
+.cta-AllPhotos {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    .cta {
+        width: 15%;
+        height: 50px;
+        color: black;
+        background-color: #D8D8D8;
+        border: none;
+        border-radius: 2px;
+        font-family: 'Space Mono';
+        cursor: pointer;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
+    .hidden {
+        display: none;
+    }
+}
+
+/********** MEDIA QUERIES **********/
+@media screen and (max-width: 1440px) {
+    .alsolike-section {
+         margin: 0 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .alsolike-section {        
+        .related-photo {
+            .relatedPhoto-container {
+                height: 50vh;
+            }    
+        }
+    }
+}
+    
+@media screen and (max-width: 768px) {
+    .alsolike-section {        
+        .related-photo {
+            .relatedPhoto-container {
+                height: 40vh;
+            }    
+        }
+    } 
+    .cta-AllPhotos {
+        .cta {
+            width: 25%;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .alsolike-section {
+        text-align: center;
+        h2 {
+            font-size: 15;
+        }        
+        .related-photo {
+            .relatedPhoto-container {
+                width: 100%;
+                height: 40vh;
+            }    
+        }
+    } 
+    
+    .cta-AllPhotos {
+        margin-bottom: 0px;
+        margin-top: 3vh;
+        .cta {
+            width: 45%;
+            font-size: 12px;
+        }
+    }    
+}

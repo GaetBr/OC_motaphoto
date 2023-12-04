@@ -2,13 +2,14 @@
 /*
  * Template Name: single-photo
  */
-$reference = get_post_meta(get_the_ID(), 'reference', true);
+$refPhoto = get_post_meta(get_the_ID(), 'reference', true);
 get_header(); ?>
 <div id="primary" class="content">
     <main class="site-main">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="post-content">
                 <div class="post-info">
+                    <!-- Display photo information -->
                     <h1 class="post-title break-line">
                         <?php the_title();?>
                     </h1>
@@ -19,8 +20,9 @@ get_header(); ?>
                     <p>ANNÉE : <?php echo the_terms(get_the_ID(), 'annee', false); ?></p>
                 </div>
                 <div class="post-image">
+                    <!-- Display the featured image -->
                     <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="post-thumbnail custom-image-size" />
-                    <?php echo get_template_part('/templates/templates-parts/photo-overlay'); ?>
+                    <?php echo get_template_part('/templates/templates-parts/photo-overlay'); ?>                    
                 </div>
             </div>
         </article>
@@ -29,10 +31,12 @@ get_header(); ?>
                 <div class="interested_contact">
                     <p> Cette photo vous intéresse ? </p>
                     <div class="interested-btn">
+                        <!-- Display contact button -->
                         <button data-refphoto="<?php echo get_the_ID(); ?>" id="contactBTN">Contact</button>
                     </div>
                 </div>
                 <div class="interested-image">
+                    <!-- Display previous and next photo thumbnails -->
                     <div class="container-thumbnail">
                         <div class="previous">
                             <?php 
@@ -54,11 +58,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <?php get_template_part('/templates/templates-parts/photo_block'); ?>
+        <section class="alsolike-section">
+            <!-- Include template part for displaying related photos -->
+            <?php get_template_part('/templates/templates-parts/photo-block'); ?>
+        </section>
     </main>
 </div>
 <script>
-  // Récupère la référence de la photo en tant que variable JavaScript
-  var refPhoto = <?php echo json_encode($reference, JSON_HEX_TAG); ?>;
+    // Pass the reference photo to JavaScript
+    var refPhoto = "<?php echo esc_js($refPhoto); ?>";
 </script>
+
 <?php get_footer(); ?>

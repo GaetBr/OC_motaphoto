@@ -1,7 +1,5 @@
-/* Style du footer */
 .site-footer {
   margin-top: auto;
-  //height: 40px;
   border-top: 2px solid black; 
   ul {
     list-style: none;
@@ -21,7 +19,9 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
+/********** MEDIA QUERIES **********/
+
+@media screen and (max-width: 768px) {
   .site-footer{
     ul{
       flex-direction: column;

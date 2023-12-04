@@ -1,4 +1,4 @@
-<!-- Bouton Burger en dehors du conteneur nav -->
+<!-- Burger button outside the nav container -->
 <div class="navigation-right">
     <a href="#" id="openBtn">
         <span class="burger-icon">
@@ -8,10 +8,10 @@
         </span>
     </a>
 </div>
-<!-- Contenu du menu burger -->
+<!-- Content of the burger menu -->
 <div id="mySidenav" class="sidenav">
     <?php
-    // Affiche le menu géré depuis WordPress dans le menu burger
+    // Displays the menu managed from WordPress in the burger menu
     wp_nav_menu(array('theme_location' => 'menu-principal', 'menu_id' => 'main-menu'));
     ?>
 </div>

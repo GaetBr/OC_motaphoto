@@ -9,6 +9,7 @@
     </nav><!-- #footer-navigation -->
 </footer><!-- #colophon -->
 <?php get_template_part('templates/templates-parts/modal-contact'); ?>
+<?php get_template_part('templates/templates-parts/lightbox'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

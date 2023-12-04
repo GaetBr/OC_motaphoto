@@ -1,0 +1,156 @@
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .lightbox_close {
+    background: url(../assets/images/Vector.png)center center/22px 22px transparent no-repeat;
+    position: absolute;
+    text-indent: -9999px;
+    overflow: hidden;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }  
+  .lightbox_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;        
+    .lightbox_prev,
+    .lightbox_next {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0 50px;
+      display: flex;
+      align-items: center; 
+      span {
+        color: white;
+        padding: 0 10px;
+        font-family: 'Space Mono', sans-serif;
+        font-weight: 400;
+      }
+      img {
+        width: 30px;
+        height: 15px;
+      }
+    }
+    .img-container {
+      max-width: 100%;
+      max-height: 100vh;
+      .lightbox_img {
+        width: 100%;
+        height: 90vh;
+        object-fit: contain;
+      }
+      .lightbox_info {
+        display: flex !important;
+        color: white;
+        justify-content: space-between;
+        .lightbox_ref,
+        .lightbox_cat {
+          text-transform: uppercase;
+        }
+      }  
+    }
+  }
+}
+.lightbox-scroll-lock {
+    overflow: hidden;
+}
+
+// Adding styles to manage arrow opacity
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.lightbox_prev,
+.lightbox_next {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/********** MEDIA QUERIES **********/
+
+@media screen and (max-width: 768px) {
+  .lightbox {
+    .lightbox_close {
+      width: 22px;
+      height: 22px;
+    }  
+    .lightbox_container {
+      width: 100%;
+      height: 100vh;       
+      .lightbox_prev,
+      .lightbox_next {
+        margin: 0 10px;
+        span {
+          display: none;
+        }
+      }
+      .img-container {
+        display: flex;
+        flex-direction: column;
+        .lightbox_img {
+            margin: 0 auto;
+            width: 100%;
+            height: 90vh;
+        }
+        .lightbox_info {
+          margin: 0 auto;
+          width: 80%;
+          .lightbox_ref,
+          .lightbox_cat {
+            font-size: 1em;
+          }
+        }  
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .lightbox {
+    .lightbox_close {
+      width: 22px;
+      height: 22px;
+    }  
+    .lightbox_container {
+      width: 100%;
+      height: 100vh;        
+      .lightbox_prev,
+      .lightbox_next {
+        margin: 0 0px;
+        img {
+            width: 20px;
+            height: 15px;
+        }
+      }
+      .img-container {
+        .lightbox_info {
+          .lightbox_ref,
+          .lightbox_cat {
+            font-size: 0.7em;
+          }
+        }  
+      }
+    }
+  }
+}
